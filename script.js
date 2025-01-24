@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let intervalId;
   let isPaused = false;
+  let touchStartX = null;
 
   function createIndicators(imagePaths) {
     imagePaths.forEach((_, index) => {
@@ -114,9 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!touchStartX) return;
     const touchEndX = event.touches[0].clientX;
     const touchDiff = touchStartX - touchEndX;
-    if (touchDiff > 50) nextSlide();
-    if (touchDiff < -50) prevSlide();
-    touchStartX = null;
+    if (touchDiff > 50) {
+      nextSlide();
+      touchStartX = null;
+    } else if (touchDiff < -50) {
+      prevSlide();
+      touchStartX = null;
+    }
     resetAutoSlide();
   }
 
