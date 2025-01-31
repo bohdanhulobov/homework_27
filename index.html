@@ -3,19 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
+    <title>Store</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="slider">
-      <div class="slides"></div>
-      <div class="indicators"></div>
-      <div class="controls">
+    <div class="store mt-10">
+      <h2 class="text-2xl font-bold mb-4">Store</h2>
+    </div>
+    <div class="product-details hidden">
+      <button class="back-to-store">Back to Store</button>
+      <div class="slider mt-4">
+        <div class="slides"></div>
+      </div>
+      <div class="indicators-container">
+        <div class="indicators"></div>
+      </div>
+      <div class="controls-container">
         <button class="prev">Prev</button>
         <button class="pause-play">Pause</button>
         <button class="next">Next</button>
       </div>
+      <div class="product-description mt-4"></div>
     </div>
-    <script src="script.js"></script>
+    <script src="store.js"></script>
+    <script src="slider.js"></script>
   </body>
 </html>

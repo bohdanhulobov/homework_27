@@ -1,19 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const imagePaths = [
-    "media/1.jpg",
-    "media/2.png",
-    "media/3.jpg",
-    "media/4.webp",
-    "media/5.jpg",
-    "media/6.jpg",
-    "media/7.jpg",
-    "media/8.jpg",
-    "media/9.png",
-  ];
-
+function initSlider(imagePaths) {
   const slidesContainer = document.querySelector(".slides");
 
   function createSlides() {
+    slidesContainer.innerHTML = "";
     imagePaths.forEach((path, index) => {
       const slide = document.createElement("div");
 
@@ -40,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let touchStartX = null;
 
   function createIndicators(imagePaths) {
+    indicatorsContainer.innerHTML = "";
     imagePaths.forEach((_, index) => {
       const indicator = document.createElement("div");
       indicator.classList.add("indicator");
@@ -136,4 +126,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", handleKeydown);
   document.addEventListener("touchstart", handleTouchStart);
   document.addEventListener("touchmove", handleTouchMove);
-});
+}
